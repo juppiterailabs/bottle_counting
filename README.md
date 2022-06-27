@@ -254,6 +254,20 @@ We are super excited about our first-ever Ultralytics YOLOv5 🚀 EXPORT Competi
 - **TTA** [Test Time Augmentation](https://github.com/ultralytics/yolov5/issues/303) includes reflection and scale augmentations.<br>Reproduce by `python val.py --data coco.yaml --img 1536 --iou 0.7 --augment`
 
 </details>
+   
+## <div align="center">Output</div>
+Some of the test outputs are listed below:
+   ![bottels4](https://user-images.githubusercontent.com/80816820/175939076-ac7974b3-872d-4864-8a06-5563c0f9702c.jpg)
+   ![bottels41](https://user-images.githubusercontent.com/80816820/175939086-69af0dad-dc98-4b47-ae96-8353816fc4e2.jpg)
+   ![bottels43](https://user-images.githubusercontent.com/80816820/175939093-7b216bbe-4105-45e2-a624-1ec959a47c07.jpg)
+   ![Uploading bottel![bottels46](https://user-images.githubusercontent.com/80816820/175939108-df2bd696-2034-422c-9bff-0d16054e1e4a.jpg)
+   
+Video ouptu:
+   
+
+https://user-images.githubusercontent.com/80816820/175939333-5188ca12-83c2-4602-9e04-ad06fa048b87.mp4
+
+
 
 ## <div align="center">Contribute</div>
 
