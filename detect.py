@@ -75,6 +75,7 @@ def run(
         half=False,  # use FP16 half-precision inference
         dnn=False,  # use OpenCV DNN for ONNX inference
 ):
+    count = 0
     source = str(source)
     save_img = not nosave and not source.endswith('.txt')  # save inference images
     is_file = Path(source).suffix[1:] in (IMG_FORMATS + VID_FORMATS)
@@ -132,6 +133,7 @@ def run(
 
         # Process predictions
         for i, det in enumerate(pred):  # per image
+            count = 0
             seen += 1
             if webcam:  # batch_size >= 1
                 p, im0, frame = path[i], im0s[i].copy(), dataset.count
@@ -169,6 +171,18 @@ def run(
                         annotator.box_label(xyxy, label, color=colors(c, True))
                     if save_crop:
                         save_one_box(xyxy, imc, file=save_dir / 'crops' / names[c] / f'{p.stem}.jpg', BGR=True)
+
+
+            # AI coordinator
+
+            class_name_count = 'bottle'
+            l = s[1:s.find(class_name_count)].split()[-1]
+            if class_name_count in s:
+                print(l, class_name_count)
+                count += int(l)
+            cv2.rectangle(im0, (0, 0), (200, 50), (0,0,0), -1)
+            cv2.putText(im0,str(count) + class_name_count, (7,43), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 3)
+
 
             # Stream results
             im0 = annotator.result()
